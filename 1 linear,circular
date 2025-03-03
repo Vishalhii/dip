@@ -1,0 +1,21 @@
+#PRAC 1A
+X = [4 5 6; 7 8 9]; 
+H = [1; 1; 1]; 
+Y = conv2(X, H, 'full');   #% 'full' keeps entire convolution output
+
+disp('Practical 1a'); 
+disp(Y);
+
+#PRAC 1B
+X = [1, 2; 3, 4];  
+H = [5, 6; 7, 8];  
+
+n = max(length(X), length(H));  % Get max length of both matrices
+
+v1 = reshape(X', 1, []);  % Convert transposed X to a row vector
+v2 = reshape(H', 1, []);  % Convert transposed H to a row vector
+
+Y = cconv(v1, v2, n);  % Perform circular convolution
+
+disp('Circular convoluted vector Y = ');  
+disp(Y);
