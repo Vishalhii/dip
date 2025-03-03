@@ -1,0 +1,34 @@
+A splitting RGB pla
+img = imread('E:\DIP AVINASH\IMAGE\IMG_20231216_125459.jpg');
+subplot(1, 4, 1);
+imshow(img);
+title('Original Image');
+s = size(img);
+redp = img(:, :, 1);
+greenp = img(:, :, 2);
+bluep = img(:, :, 3);
+subplot(1, 4, 2);
+imshow(greenp);
+title('green plane');
+subplot(1, 4, 3);
+imshow(redp);
+title('red plane');
+subplot(1, 4, 4);
+imshow(bluep);
+title('blue plane');
+
+b pseudo coloring
+img = imread('E:\DIP AVINASH\IMAGE\IMG_20231216_125459.jpg');
+subplot(1, 2, 1);
+imshow(img);
+title('Original Image');
+s = size(img);
+redp = img(:, :, 1);
+greenp = img(:, :, 2);
+bluep = img(:, :, 3);
+OP(:, :, 1) = greenp;
+OP(:, :, 2) = bluep;
+OP(:, :, 3) = redp;
+subplot(1, 2, 2);
+imshow(OP);
+title('Pseudo Coloring');
