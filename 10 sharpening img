@@ -1,0 +1,10 @@
+a = imread('E:\vishal DIP\vishal.jpg');
+i = rgb2gray(a);
+h = fspecial('unsharp');
+b = imfilter(i,h); 
+subplot(1,2,1);
+imshow(i);
+title('Original Img');
+subplot(1,2,2);
+imshow(b);
+title('high pass filtered img')
