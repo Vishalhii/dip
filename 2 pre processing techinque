@@ -1,0 +1,49 @@
+A Log Transform
+ img1 = imread('E:\DIP AVINASH\IMAGE\IMG_20231216_125459.jpg');
+ img = rgb2gray(img1);
+ subplot(1,2,1);
+ imshow(img);
+ title('Original Image');
+ L = 255;
+ c = L/log10(1+L);
+ d = c*(log10(1+double(img)));
+ a = uint8(d);
+ subplot(1, 2, 2);
+ imshow(uint8(a));
+ title('Practical 2A');
+
+ B negative ing
+ img1 = imread('E:\DIP AVINASH\IMAGE\IMG_20231216_125459.jpg');
+ img = rgb2gray(img1);
+ subplot(1, 2, 1);
+ imshow(img);
+ title('Original Image');
+ s = size(img);
+ for x = 1:s(1)
+for y = 1:s(2)
+img_neg(x, y) = 255-img(x, y);
+end;
+end;
+ img_n = uint8(img_neg);
+ subplot(1, 2, 2);
+ imshow(img_n);
+ title('Negative Image');
+
+ C power law tra
+  img1 = imread('E:\DIP AVINASH\IMAGE\IMG_20231216_125459.jpg');
+ img = rgb2gray(img1);
+ subplot(1, 2, 1);
+ imshow(img);
+ title('Original Image');
+ s = size(img);
+ c = 1;
+ img = double(img);
+ gamma = 0.2;
+ for x = 1:s(1)
+ for y = 1:s(2)
+ j(x,y) = c*(img(x,y)^gamma);
+end;
+end;
+ subplot(1, 2, 2);
+ imshow(j,[]);
+ title('Power Law Transformation');
